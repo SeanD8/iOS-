@@ -10,9 +10,20 @@ import UIKit
 
 class ThirdViewController: UIViewController {
     
+    let data = SavedData()
+    
+    @IBOutlet weak var incomeLabel: UILabel!
+    @IBOutlet weak var expensesLabel: UILabel!
+    @IBOutlet weak var netIncomeLabel: UILabel!
+    @IBOutlet weak var yearlyLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        incomeLabel.text = "$\(data.getSavedIncome())"
+        expensesLabel.text = "$\(data.getSavedExpense())"
+        netIncomeLabel.text = "$\(data.getMonthlySavings())"
+        yearlyLabel.text = "$\(data.getYearlySaved())"
     }
     
     override func didReceiveMemoryWarning() {
