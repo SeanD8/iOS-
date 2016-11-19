@@ -16,6 +16,7 @@
 		6A9146791DD0F1A6009790BA /* iBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9146781DD0F1A6009790BA /* iBudgetTests.swift */; };
 		6A9146841DD0F1A6009790BA /* iBudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9146831DD0F1A6009790BA /* iBudgetUITests.swift */; };
 		6A9146921DD0F312009790BA /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9146911DD0F312009790BA /* ThirdViewController.swift */; };
+		6AA738B71DE103A8001C5A11 /* SavedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA738B61DE103A8001C5A11 /* SavedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		6A9146831DD0F1A6009790BA /* iBudgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBudgetUITests.swift; sourceTree = "<group>"; };
 		6A9146851DD0F1A6009790BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A9146911DD0F312009790BA /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		6AA738B61DE103A8001C5A11 /* SavedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SavedData.swift; path = ../SavedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		6A9146601DD0F1A6009790BA /* iBudget */ = {
 			isa = PBXGroup;
 			children = (
+				6AA738B61DE103A8001C5A11 /* SavedData.swift */,
 				6A9146611DD0F1A6009790BA /* AppDelegate.swift */,
 				6A9146631DD0F1A6009790BA /* FirstViewController.swift */,
 				6A9146651DD0F1A6009790BA /* SecondViewController.swift */,
@@ -266,6 +269,7 @@
 				6A9146621DD0F1A6009790BA /* AppDelegate.swift in Sources */,
 				6A9146921DD0F312009790BA /* ThirdViewController.swift in Sources */,
 				6A9146641DD0F1A6009790BA /* FirstViewController.swift in Sources */,
+				6AA738B71DE103A8001C5A11 /* SavedData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
