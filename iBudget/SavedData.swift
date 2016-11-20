@@ -8,12 +8,11 @@
 
 import Foundation
 class SavedData {
+    
     func getSavedIncome() -> Int{
-        
         let prefs = NSUserDefaults.standardUserDefaults()
         let income = prefs.integerForKey("Income")
         return income
-        
     }
     func getSavedExpense() -> Int{
         let prefs = NSUserDefaults.standardUserDefaults()
@@ -32,5 +31,9 @@ class SavedData {
         let yearlySaved = saved*12
         return yearlySaved
     }
-    
+    func getPercentSaved() -> Int{
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let income = prefs.integerForKey("Percent")
+        return income
+    }
 }

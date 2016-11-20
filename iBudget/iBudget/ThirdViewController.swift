@@ -20,15 +20,23 @@ class ThirdViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        incomeLabel.text = "$\(data.getSavedIncome())"
-        expensesLabel.text = "$\(data.getSavedExpense())"
-        netIncomeLabel.text = "$\(data.getMonthlySavings())"
-        yearlyLabel.text = "$\(data.getYearlySaved())"
+        loadData()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        loadData()
+    }
+    
+    func loadData(){
+        incomeLabel.text = "$\(data.getSavedIncome())"
+        expensesLabel.text = "$\(data.getSavedExpense())"
+        netIncomeLabel.text = "$\(data.getMonthlySavings())"
+        yearlyLabel.text = "$\(data.getYearlySaved())"
     }
     
     

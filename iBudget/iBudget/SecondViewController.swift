@@ -17,14 +17,19 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var label2: UILabel!
     
+    @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var percent: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let savedData = SavedData()
         let income = savedData.getSavedIncome()
         let expense = savedData.getSavedExpense()
+        let percent = savedData.getPercentSaved()
         
         label.text = "Current Monthly Income: $\(income)"
-        label2.text = "Current Monthly Income: $\(expense)"
+        label2.text = "Current Monthly Expenses: $\(expense)"
+        label3.text = "%\(percent)"
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -37,7 +42,6 @@ class SecondViewController: UIViewController {
     
      func getIncome () {
         let a:Int? = Int(income.text!)
-        //let text: String = income.text!
         if let userInput = a{
             label.text = "Current Monthly Income: $\(userInput)"
             let prefs = NSUserDefaults.standardUserDefaults()
@@ -45,10 +49,6 @@ class SecondViewController: UIViewController {
         }else{
             label.text = "Please Enter a Number"
         }
-        
-     
-        
-        
     }
      func getExpense() {
         
@@ -61,10 +61,17 @@ class SecondViewController: UIViewController {
         }else{
             label2.text = "Please Enter a Number"
         }
-
+    }
+    func getPercent() {
+        let a:Int? = Int(percent.text!)
         
-        
-        
+        if let userInput = a{
+            label3.text = "\(userInput)%"
+            let prefs = NSUserDefaults.standardUserDefaults()
+            prefs.setInteger(userInput, forKey: "Percent")
+        }else{
+            //label3.text = "Please Enter a Number"
+        }
     }
 
     @IBAction func save(sender: UIButton) {
@@ -75,5 +82,8 @@ class SecondViewController: UIViewController {
         getExpense()
     }
     
+    @IBAction func save3(sender: UIButton) {
+        getPercent()
+    }//HELLO
 }
 
