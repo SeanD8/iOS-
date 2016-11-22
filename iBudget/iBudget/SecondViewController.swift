@@ -19,6 +19,8 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var label3: UILabel!
     @IBOutlet weak var percent: UITextField!
+    @IBOutlet weak var percentWarningLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,12 +68,18 @@ class SecondViewController: UIViewController {
         let a:Double? = Double(percent.text!)
         
         if let userInput = a{
-            label3.text = "\(userInput)%"
-            let prefs = NSUserDefaults.standardUserDefaults()
-            prefs.setDouble(userInput, forKey: "Percent")
+            if(userInput > -0.00000000000001 && userInput < 100.00000000000001){
+                percentWarningLabel.hidden = true
+                label3.text = "\(userInput)%"
+                let prefs = NSUserDefaults.standardUserDefaults()
+                prefs.setDouble(userInput, forKey: "Percent")
+            }else{
+                percentWarningLabel.hidden = false
+            }
         }else{
-            //label3.text = "Please Enter a Number"
+            percentWarningLabel.hidden = false
         }
+        
     }
 
     @IBAction func save(sender: UIButton) {

@@ -36,4 +36,14 @@ class SavedData {
         let income = prefs.doubleForKey("Percent")
         return income
     }
+    func getSpendingMoney() -> Double{
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let income = prefs.doubleForKey("Spending Money")
+        return income
+    }
+    func getRemainingBalance() -> Double{
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let income = prefs.doubleForKey("Remaining Balance")
+        return income
+    }
 }
