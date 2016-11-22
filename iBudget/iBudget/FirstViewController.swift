@@ -11,11 +11,11 @@ import UIKit
 class FirstViewController: UIViewController {
 
     @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var incomeField: UITextField!
-    @IBOutlet weak var expenseField: UITextField!
     @IBOutlet weak var incomeButton: UIButton!
     @IBOutlet weak var expenseButton: UIButton!
     @IBOutlet weak var remainingBudget: UILabel!
+    @IBOutlet weak var expenseField: UITextField!
+    @IBOutlet weak var incomeField: UITextField!
     
     let data = SavedData()
     
@@ -66,6 +66,7 @@ class FirstViewController: UIViewController {
             var money = data.getRemainingBalance()
             money = money - userInput
             prefs.setDouble(money, forKey: "Remaining Balance")
+            updateProgress()
         }else{
             //label2.text = "Please Enter a Number"
         }

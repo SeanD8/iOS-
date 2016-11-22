@@ -63,11 +63,11 @@
                                     <action selector="addExpense:" destination="9pv-A4-QxB" eventType="touchUpInside" id="bIg-2f-Hmg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-Fj-tna">
-                                <rect key="frame" x="392" y="429" width="160" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-Fj-tna">
+                                <rect key="frame" x="396" y="429" width="152" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Add One Time Expense">
+                                <state key="normal" title="Add One Time Income">
                                     <color key="titleColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -106,9 +106,9 @@
                     <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf" userLabel="HOME ICON"/>
                     <connections>
                         <outlet property="expenseButton" destination="zbK-l1-Mgg" id="21i-Db-xxr"/>
-                        <outlet property="expenseField" destination="8tR-7N-gF6" id="qbT-wA-HZF"/>
+                        <outlet property="expenseField" destination="HSe-Em-fMM" id="jBK-4Z-0mE"/>
                         <outlet property="incomeButton" destination="pCb-Fj-tna" id="6sf-Gs-a1J"/>
-                        <outlet property="incomeField" destination="HSe-Em-fMM" id="gyl-0B-QX5"/>
+                        <outlet property="incomeField" destination="8tR-7N-gF6" id="S7z-Zu-qF7"/>
                         <outlet property="progressBar" destination="Sq7-Md-iRY" id="2qL-c4-qLf"/>
                         <outlet property="remainingBudget" destination="xcI-3e-EBq" id="TJ6-C8-zGX"/>
                     </connections>
