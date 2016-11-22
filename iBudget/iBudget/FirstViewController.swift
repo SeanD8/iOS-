@@ -10,8 +10,16 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var incomeField: UITextField!
+    @IBOutlet weak var expenseField: UITextField!
+    @IBOutlet weak var incomeButton: UIButton!
+    @IBOutlet weak var expenseButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        incomeButton.layer.cornerRadius = 10
+        expenseButton.layer.cornerRadius = 10
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
