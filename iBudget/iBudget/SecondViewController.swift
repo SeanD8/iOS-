@@ -41,34 +41,34 @@ class SecondViewController: UIViewController {
    
     
      func getIncome () {
-        let a:Int? = Int(income.text!)
+        let a:Double? = Double(income.text!)
         if let userInput = a{
             label.text = "Current Monthly Income: $\(userInput)"
             let prefs = NSUserDefaults.standardUserDefaults()
-            prefs.setInteger(userInput, forKey: "Income")
+            prefs.setDouble(userInput, forKey: "Income")
         }else{
             label.text = "Please Enter a Number"
         }
     }
      func getExpense() {
         
-        let a:Int? = Int(exspense.text!)
+        let a:Double? = Double(exspense.text!)
         
         if let userInput = a{
             label2.text = "Current Monthly Expense: $\(userInput)"
             let prefs = NSUserDefaults.standardUserDefaults()
-            prefs.setInteger(userInput, forKey: "Expense")
+            prefs.setDouble(userInput, forKey: "Expense")
         }else{
             label2.text = "Please Enter a Number"
         }
     }
     func getPercent() {
-        let a:Int? = Int(percent.text!)
+        let a:Double? = Double(percent.text!)
         
         if let userInput = a{
             label3.text = "\(userInput)%"
             let prefs = NSUserDefaults.standardUserDefaults()
-            prefs.setInteger(userInput, forKey: "Percent")
+            prefs.setDouble(userInput, forKey: "Percent")
         }else{
             //label3.text = "Please Enter a Number"
         }
@@ -84,6 +84,6 @@ class SecondViewController: UIViewController {
     
     @IBAction func save3(sender: UIButton) {
         getPercent()
-    }//HELLO
+    }
 }
 
