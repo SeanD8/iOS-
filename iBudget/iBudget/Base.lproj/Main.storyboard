@@ -21,32 +21,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REMAINING BUDGET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDE-Op-rp6">
-                                <rect key="frame" x="220" y="76" width="163" height="21"/>
+                                <rect key="frame" x="219" y="76" width="163" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcI-3e-EBq">
-                                <rect key="frame" x="279" y="122" width="45" height="21"/>
+                                <rect key="frame" x="278" y="122" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8tR-7N-gF6">
-                                <rect key="frame" x="434" y="483" width="97" height="30"/>
+                                <rect key="frame" x="453" y="483" width="97" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="0.44587823275862071" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="VeF-vy-1VC"/>
+                                    <constraint firstAttribute="width" constant="97" id="6Zo-2N-XEO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbK-l1-Mgg">
-                                <rect key="frame" x="27" y="426" width="180" height="34"/>
+                                <rect key="frame" x="27" y="426" width="146" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="wsq-bO-acV"/>
-                                </constraints>
                                 <state key="normal" title="Add Expense">
                                     <color key="titleColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -60,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-Fj-tna">
-                                <rect key="frame" x="391" y="426" width="182" height="34"/>
+                                <rect key="frame" x="429" y="426" width="144" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Add Income">
@@ -70,41 +67,47 @@
                                     <action selector="addIncome:" destination="9pv-A4-QxB" eventType="touchUpInside" id="H6r-WZ-5v6"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" misplaced="YES" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Sq7-Md-iRY">
+                                <rect key="frame" x="7" y="163" width="585" height="60"/>
+                                <color key="tintColor" red="0.47060346603393555" green="0.76517254114151001" blue="0.078409768640995026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="eXb-wd-sz0"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="trackTintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HSe-Em-fMM">
-                                <rect key="frame" x="69" y="483" width="97" height="30"/>
+                                <rect key="frame" x="52" y="483" width="97" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.46371228448275864" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="efX-rG-30V"/>
+                                    <constraint firstAttribute="width" constant="97" id="kg6-JR-R8T"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <progressView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" fixedFrame="YES" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Sq7-Md-iRY">
-                                <rect key="frame" x="7" y="163" width="585" height="2"/>
-                                <color key="tintColor" red="0.47060346603393555" green="0.76517254114151001" blue="0.078409768640995026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="progressTintColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="trackTintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="tintColor" red="1" green="0.2429955087" blue="0.036991184480000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="8tR-7N-gF6" secondAttribute="trailing" constant="49" id="1JG-xw-xU6"/>
-                            <constraint firstItem="zbK-l1-Mgg" firstAttribute="top" secondItem="pCb-Fj-tna" secondAttribute="top" id="1p3-cJ-P39"/>
-                            <constraint firstItem="FDE-Op-rp6" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="56" id="4TA-BY-9W5"/>
-                            <constraint firstItem="pCb-Fj-tna" firstAttribute="centerX" secondItem="8tR-7N-gF6" secondAttribute="centerX" id="52H-Vy-JbL"/>
-                            <constraint firstItem="zbK-l1-Mgg" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="7" id="8Fb-Ge-Cm1"/>
-                            <constraint firstItem="zbK-l1-Mgg" firstAttribute="centerX" secondItem="HSe-Em-fMM" secondAttribute="centerX" id="Jka-uh-6ii"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="HSe-Em-fMM" secondAttribute="bottom" constant="38" id="LIv-Y2-1vJ"/>
-                            <constraint firstItem="xcI-3e-EBq" firstAttribute="top" secondItem="FDE-Op-rp6" secondAttribute="bottom" constant="25" id="QvX-JK-M98"/>
-                            <constraint firstItem="pCb-Fj-tna" firstAttribute="baseline" secondItem="zbK-l1-Mgg" secondAttribute="firstBaseline" id="R9F-KL-VYg"/>
-                            <constraint firstItem="HSe-Em-fMM" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="49" id="YM9-4L-xlA"/>
-                            <constraint firstItem="zbK-l1-Mgg" firstAttribute="baseline" secondItem="pCb-Fj-tna" secondAttribute="firstBaseline" id="cp6-Jd-chx"/>
-                            <constraint firstItem="HSe-Em-fMM" firstAttribute="top" secondItem="zbK-l1-Mgg" secondAttribute="bottom" constant="23" id="dXD-MU-8y7"/>
-                            <constraint firstItem="FDE-Op-rp6" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="220" id="gMF-ai-Wga"/>
-                            <constraint firstItem="FDE-Op-rp6" firstAttribute="centerX" secondItem="xcI-3e-EBq" secondAttribute="centerX" id="nSQ-aX-cZJ"/>
-                            <constraint firstItem="HSe-Em-fMM" firstAttribute="baseline" secondItem="8tR-7N-gF6" secondAttribute="baseline" id="nxn-Z5-m44"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pCb-Fj-tna" secondAttribute="trailing" constant="7" id="uwe-Fm-4hX"/>
+                            <constraint firstItem="zbK-l1-Mgg" firstAttribute="top" secondItem="pCb-Fj-tna" secondAttribute="top" id="0fa-ND-0p7"/>
+                            <constraint firstItem="Sq7-Md-iRY" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="2JT-b0-t3u"/>
+                            <constraint firstItem="pCb-Fj-tna" firstAttribute="centerX" secondItem="8tR-7N-gF6" secondAttribute="centerX" id="3UQ-IM-nUS"/>
+                            <constraint firstItem="FDE-Op-rp6" firstAttribute="centerX" secondItem="xcI-3e-EBq" secondAttribute="centerX" id="4tZ-fR-BE2"/>
+                            <constraint firstItem="HSe-Em-fMM" firstAttribute="top" secondItem="zbK-l1-Mgg" secondAttribute="bottom" constant="27" id="6kt-Ht-mfY"/>
+                            <constraint firstItem="zbK-l1-Mgg" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="7" id="86a-nS-F6u"/>
+                            <constraint firstItem="pCb-Fj-tna" firstAttribute="baseline" secondItem="zbK-l1-Mgg" secondAttribute="firstBaseline" id="8Yt-OF-2mf"/>
+                            <constraint firstItem="HSe-Em-fMM" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="32" id="8m1-Od-KrC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pCb-Fj-tna" secondAttribute="trailing" constant="7" id="SE9-0g-Yb8"/>
+                            <constraint firstItem="zbK-l1-Mgg" firstAttribute="baseline" secondItem="pCb-Fj-tna" secondAttribute="firstBaseline" id="TZz-Il-A6E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8tR-7N-gF6" secondAttribute="trailing" constant="30" id="ZV1-iT-lty"/>
+                            <constraint firstItem="Sq7-Md-iRY" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-13" id="bLn-tf-cXa"/>
+                            <constraint firstItem="Sq7-Md-iRY" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="163" id="dXx-bE-qLw"/>
+                            <constraint firstItem="xcI-3e-EBq" firstAttribute="top" secondItem="FDE-Op-rp6" secondAttribute="bottom" constant="25" id="ecj-Wo-oUc"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="HSe-Em-fMM" secondAttribute="bottom" constant="38" id="hNy-OS-5TH"/>
+                            <constraint firstItem="HSe-Em-fMM" firstAttribute="baseline" secondItem="8tR-7N-gF6" secondAttribute="baseline" id="mS6-yn-0Ty"/>
+                            <constraint firstItem="zbK-l1-Mgg" firstAttribute="centerX" secondItem="HSe-Em-fMM" secondAttribute="centerX" id="rZo-Ut-7Oa"/>
+                            <constraint firstItem="FDE-Op-rp6" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="s2w-8T-r78"/>
+                            <constraint firstItem="Sq7-Md-iRY" firstAttribute="top" secondItem="xcI-3e-EBq" secondAttribute="bottom" constant="20" id="xFx-Q7-5Xg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" image="Dollar" selectedImage="Dollar" id="acW-dT-cKf" userLabel="HOME ICON">
