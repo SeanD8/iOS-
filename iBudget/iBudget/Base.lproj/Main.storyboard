@@ -59,6 +59,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addExpense:" destination="9pv-A4-QxB" eventType="touchUpInside" id="bIg-2f-Hmg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-Fj-tna">
                                 <rect key="frame" x="392" y="429" width="160" height="30"/>
@@ -67,6 +70,9 @@
                                 <state key="normal" title="Add One Time Expense">
                                     <color key="titleColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addIncome:" destination="9pv-A4-QxB" eventType="touchUpInside" id="H6r-WZ-5v6"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HSe-Em-fMM">
                                 <rect key="frame" x="66" y="482" width="97" height="30"/>
@@ -104,6 +110,7 @@
                         <outlet property="incomeButton" destination="pCb-Fj-tna" id="6sf-Gs-a1J"/>
                         <outlet property="incomeField" destination="HSe-Em-fMM" id="gyl-0B-QX5"/>
                         <outlet property="progressBar" destination="Sq7-Md-iRY" id="2qL-c4-qLf"/>
+                        <outlet property="remainingBudget" destination="xcI-3e-EBq" id="TJ6-C8-zGX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -206,6 +213,15 @@
                                     <action selector="save3:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Cz0-x2-97q"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Not A valid percent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBz-M9-uV9">
+                                <rect key="frame" x="209" y="97" width="110" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="ajj-eF-7eh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -214,8 +230,10 @@
                             <constraint firstItem="BWK-mT-rzM" firstAttribute="trailing" secondItem="Gn7-bH-Z3d" secondAttribute="trailing" id="E4H-MC-0yV"/>
                             <constraint firstItem="SOa-d7-7m7" firstAttribute="top" secondItem="Lal-y1-oQq" secondAttribute="bottom" constant="8" symbolic="YES" id="Hn0-Bi-gzR"/>
                             <constraint firstItem="I1O-uC-r52" firstAttribute="leading" secondItem="5dc-Sh-eqP" secondAttribute="leading" id="KO9-gQ-pcT"/>
+                            <constraint firstItem="rBz-M9-uV9" firstAttribute="baseline" secondItem="OTo-fw-ILf" secondAttribute="firstBaseline" id="OJp-zl-TUo"/>
                             <constraint firstItem="Gn7-bH-Z3d" firstAttribute="top" secondItem="OTo-fw-ILf" secondAttribute="top" id="Pho-a5-5jQ"/>
                             <constraint firstItem="Lal-y1-oQq" firstAttribute="top" secondItem="5dc-Sh-eqP" secondAttribute="top" id="TdK-bu-p2D"/>
+                            <constraint firstItem="rBz-M9-uV9" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="77" id="U0v-CM-U3H"/>
                             <constraint firstItem="F5J-60-vhq" firstAttribute="trailing" secondItem="Lal-y1-oQq" secondAttribute="trailing" id="VCJ-pE-KcI"/>
                             <constraint firstItem="Lal-y1-oQq" firstAttribute="top" secondItem="F5J-60-vhq" secondAttribute="bottom" constant="8" symbolic="YES" id="Ybb-IR-11B"/>
                             <constraint firstItem="QEE-hd-q7y" firstAttribute="top" secondItem="Gn7-bH-Z3d" secondAttribute="bottom" constant="18" id="ZuD-Iq-IH5"/>
@@ -231,8 +249,10 @@
                             <constraint firstItem="QEE-hd-q7y" firstAttribute="trailing" secondItem="1Ba-qI-EXn" secondAttribute="trailing" id="naV-Mm-5JD"/>
                             <constraint firstItem="Gn7-bH-Z3d" firstAttribute="leading" secondItem="QEE-hd-q7y" secondAttribute="leading" id="ojd-HY-Hoi"/>
                             <constraint firstItem="zf0-R6-hcb" firstAttribute="top" secondItem="1Ba-qI-EXn" secondAttribute="bottom" constant="8" symbolic="YES" id="pOB-fj-HnF"/>
+                            <constraint firstItem="rBz-M9-uV9" firstAttribute="baseline" secondItem="OTo-fw-ILf" secondAttribute="baseline" id="qJ5-xh-kMe"/>
                             <constraint firstItem="AZb-ww-diq" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="qT2-kO-STg"/>
                             <constraint firstItem="AZb-ww-diq" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="qu9-Cp-ZDk"/>
+                            <constraint firstItem="rBz-M9-uV9" firstAttribute="leading" secondItem="OTo-fw-ILf" secondAttribute="trailing" constant="3" id="rcs-FW-q4E"/>
                             <constraint firstItem="BWK-mT-rzM" firstAttribute="baseline" secondItem="O3t-Xg-GH6" secondAttribute="baseline" id="rtb-hL-Usz"/>
                             <constraint firstItem="zf0-R6-hcb" firstAttribute="leading" secondItem="Lal-y1-oQq" secondAttribute="leading" id="txa-Uk-SpC"/>
                             <constraint firstItem="O3t-Xg-GH6" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" constant="149" id="xw6-aA-p4g"/>
@@ -252,6 +272,7 @@
                         <outlet property="label2" destination="SOa-d7-7m7" id="JLr-MG-v54"/>
                         <outlet property="label3" destination="O3t-Xg-GH6" id="Qai-ml-BYd"/>
                         <outlet property="percent" destination="Gn7-bH-Z3d" id="Out-0l-L9a"/>
+                        <outlet property="percentWarningLabel" destination="rBz-M9-uV9" id="SI7-oc-FOL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
