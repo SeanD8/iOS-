@@ -9,31 +9,31 @@
 import Foundation
 class SavedData {
     
-    func getSavedIncome() -> Int{
+    func getSavedIncome() -> Double{
         let prefs = NSUserDefaults.standardUserDefaults()
-        let income = prefs.integerForKey("Income")
+        let income = prefs.doubleForKey("Income")
         return income
     }
-    func getSavedExpense() -> Int{
+    func getSavedExpense() -> Double{
         let prefs = NSUserDefaults.standardUserDefaults()
-        let income = prefs.integerForKey("Expense")
+        let income = prefs.doubleForKey("Expense")
         return income
     }
-    func getMonthlySavings() -> Int{
+    func getMonthlySavings() -> Double{
         let prefs = NSUserDefaults.standardUserDefaults()
-        let income = prefs.integerForKey("Income")
-        let expense = prefs.integerForKey("Expense")
+        let income = prefs.doubleForKey("Income")
+        let expense = prefs.doubleForKey("Expense")
         let saved = income - expense
         return saved
     }
-    func getYearlySaved() -> Int{
+    func getYearlySaved() -> Double{
         let saved = getMonthlySavings()
         let yearlySaved = saved*12
         return yearlySaved
     }
-    func getPercentSaved() -> Int{
+    func getPercentSaved() -> Double{
         let prefs = NSUserDefaults.standardUserDefaults()
-        let income = prefs.integerForKey("Percent")
+        let income = prefs.doubleForKey("Percent")
         return income
     }
 }
