@@ -524,6 +524,7 @@
                         <outlet property="expensesLabel" destination="YUr-EZ-5NM" id="o3x-nc-otp"/>
                         <outlet property="incomeLabel" destination="9Ev-GY-htr" id="3ar-WC-L0P"/>
                         <outlet property="netIncomeLabel" destination="S1m-bm-7lI" id="6Bo-8N-1Cc"/>
+                        <outlet property="savingsToDate" destination="J3i-1D-9EH" id="egB-RI-tvo"/>
                         <outlet property="yearlyLabel" destination="FMl-OC-qzL" id="h7I-qi-DD3"/>
                     </connections>
                 </viewController>

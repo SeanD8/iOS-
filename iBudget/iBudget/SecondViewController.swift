@@ -92,6 +92,8 @@ class SecondViewController: UIViewController {
         prefs.setDouble(0.0, forKey: "Remaining Balance")
         prefs.setDouble(0.0, forKey: "Saved to Date")
         prefs.setDouble(0.0, forKey: "Total Spent")
+        prefs.setObject(nil, forKey: "Date")
+        prefs.setDouble(0.0, forKey: "Time Passed")
         label.text = "Current Monthly Income: $\(0.00)"
         label2.text = "Current Monthly Income: $\(0.00)"
         label3.text = "Current Monthly Income: $\(0.00)"

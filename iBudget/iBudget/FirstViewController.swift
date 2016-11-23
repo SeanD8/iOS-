@@ -24,10 +24,10 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         incomeButton.layer.cornerRadius = 10
         expenseButton.layer.cornerRadius = 10
+        checkDate()
         updateProgress()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -49,6 +49,56 @@ class FirstViewController: UIViewController {
         }
         prefs.setBool(false, forKey: "Update")
         updateProgress()
+    }
+    
+    func checkDate() {
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components1 = calendar.components([.Day , .Month , .Year], fromDate: date)
+        
+        let year =  components1.year
+        let month = components1.month
+        let day = components1.day
+        let start = "\(year)-\(month)-\(day)"
+        
+        let prefs = NSUserDefaults.standardUserDefaults()
+        var end = prefs.stringForKey("Date")
+        //end = "2016-12-30"
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let startDate:NSDate = dateFormatter.dateFromString(start)!
+        if end != nil {
+            let endDate:NSDate = dateFormatter.dateFromString(end!)!
+            let cal = NSCalendar.currentCalendar()
+        
+            let unit:NSCalendarUnit = .Day
+            let daysPassed = cal.components(unit, fromDate: startDate, toDate: endDate, options: [])
+            let timePassedDouble = prefs.doubleForKey("Time Passed")
+            var totalTime = Double(daysPassed.day) + timePassedDouble
+            
+            let i = 30.4375
+            while (i < totalTime) {
+                totalTime = totalTime - 30.4375
+                updateSavings()
+            }
+            prefs.setDouble(totalTime, forKey: "Time Passed")
+        }
+        prefs.setObject(start, forKey: "Date")
+        
+        
+        
+    }
+    
+    func updateSavings(){
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let remainingBalance = prefs.doubleForKey("Remaining Balance")
+        let monthlySavings = data.getMonthlySavings()
+        var totalSaved = monthlySavings + remainingBalance
+        totalSaved = totalSaved + data.getSavedToDate()
+        prefs.setDouble(totalSaved, forKey: "Saved to Date")
+        resetSpendingMoney()
     }
     
     func updateProgress(){
@@ -94,8 +144,7 @@ class FirstViewController: UIViewController {
     
     func resetSpendingMoney(){
         let netIncome = data.getMonthlySavings()
-        let percent = data.getPercentSaved()
-        let spendingMoney = netIncome * (percent/100)
+        let spendingMoney = netIncome
         let prefs = NSUserDefaults.standardUserDefaults()
         prefs.setDouble(spendingMoney, forKey: "Spending Money")
         prefs.setDouble(spendingMoney, forKey: "Remaining Balance")

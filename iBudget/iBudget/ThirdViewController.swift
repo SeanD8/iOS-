@@ -18,6 +18,7 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var yearlyLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     
+    @IBOutlet weak var savingsToDate: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -37,8 +38,7 @@ class ThirdViewController: UIViewController {
         expensesLabel.text = "$\(data.getSavedExpense())"
         netIncomeLabel.text = "$\(data.getMonthlySavings())"
         yearlyLabel.text = "$\(data.getYearlySaved())"
+        savingsToDate.text = "$\(data.getSavedToDate())"
     }
-    
-    
 }
 

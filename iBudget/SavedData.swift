@@ -23,7 +23,7 @@ class SavedData {
         let prefs = NSUserDefaults.standardUserDefaults()
         let income = prefs.doubleForKey("Income")
         let expense = prefs.doubleForKey("Expense")
-        let saved = income - expense
+        let saved = (income - expense)*getPercentSaved()/100
         return saved
     }
     func getYearlySaved() -> Double{
