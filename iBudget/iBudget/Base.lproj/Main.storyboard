@@ -231,11 +231,11 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3d-Uz-D6v">
-                                <rect key="frame" x="544" y="28" width="36" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgl-5b-Pm8">
+                                <rect key="frame" x="539" y="28" width="36" height="30"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
-                                    <action selector="clear:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="YDh-12-DJv"/>
+                                    <action selector="clear:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="xeG-Qo-Ddi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -247,6 +247,7 @@
                             <constraint firstItem="Gn7-bH-Z3d" firstAttribute="leading" secondItem="Lal-y1-oQq" secondAttribute="leading" id="2dK-Es-TMy"/>
                             <constraint firstItem="QEE-hd-q7y" firstAttribute="leading" secondItem="1Ba-qI-EXn" secondAttribute="leading" id="2mL-An-Wyq"/>
                             <constraint firstItem="QEE-hd-q7y" firstAttribute="top" secondItem="AZb-ww-diq" secondAttribute="bottom" constant="24" id="5QE-vN-EBO"/>
+                            <constraint firstItem="Lgl-5b-Pm8" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="6bu-FB-VOu"/>
                             <constraint firstItem="Gn7-bH-Z3d" firstAttribute="top" secondItem="OTo-fw-ILf" secondAttribute="top" id="6fp-Ke-T2q"/>
                             <constraint firstItem="OTo-fw-ILf" firstAttribute="leading" secondItem="5dc-Sh-eqP" secondAttribute="leading" id="6g8-Pt-TqW"/>
                             <constraint firstItem="QEE-hd-q7y" firstAttribute="leading" secondItem="AZb-ww-diq" secondAttribute="leading" id="8vN-T2-jpN"/>
@@ -265,6 +266,7 @@
                             <constraint firstItem="5dc-Sh-eqP" firstAttribute="leading" secondItem="Lal-y1-oQq" secondAttribute="trailing" constant="8" symbolic="YES" id="fEE-ac-u95"/>
                             <constraint firstItem="1Ba-qI-EXn" firstAttribute="leading" secondItem="zf0-R6-hcb" secondAttribute="leading" id="ia0-HN-IvJ"/>
                             <constraint firstItem="OTo-fw-ILf" firstAttribute="leading" secondItem="Gn7-bH-Z3d" secondAttribute="trailing" constant="8" symbolic="YES" id="jMY-kM-WvG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lgl-5b-Pm8" secondAttribute="trailing" constant="5" id="mlm-os-NXa"/>
                             <constraint firstItem="Gn7-bH-Z3d" firstAttribute="top" secondItem="BWK-mT-rzM" secondAttribute="bottom" constant="1" id="n8E-tu-WAW"/>
                             <constraint firstItem="zf0-R6-hcb" firstAttribute="top" secondItem="1Ba-qI-EXn" secondAttribute="bottom" constant="8" symbolic="YES" id="pld-9l-9Un"/>
                             <constraint firstItem="AZb-ww-diq" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="qT2-kO-STg"/>

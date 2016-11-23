@@ -116,5 +116,6 @@ class SecondViewController: UIViewController {
     @IBAction func clear(sender: UIButton) {
         resetData()
     }
+    
 }
 
