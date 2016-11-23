@@ -17,18 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="iBudget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqA-fa-hU1">
-                                <rect key="frame" x="237" y="184" width="126" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dolla" translatesAutoresizingMaskIntoConstraints="NO" id="BqU-Yj-DZf">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="KqA-fa-hU1" secondAttribute="bottom" constant="356" id="5du-J4-LAZ"/>
-                            <constraint firstItem="KqA-fa-hU1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Pkr-ZH-zln"/>
-                            <constraint firstItem="KqA-fa-hU1" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="164" id="kq8-q4-r7M"/>
+                            <constraint firstItem="BqU-Yj-DZf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="5MM-Dh-hq0"/>
+                            <constraint firstItem="BqU-Yj-DZf" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Oa6-aT-rdQ"/>
+                            <constraint firstAttribute="trailing" secondItem="BqU-Yj-DZf" secondAttribute="trailing" id="Q7A-LN-FQW"/>
+                            <constraint firstItem="BqU-Yj-DZf" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="yaJ-iP-fHJ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,4 +35,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dolla" width="1300" height="1300"/>
+    </resources>
 </document>

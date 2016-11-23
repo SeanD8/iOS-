@@ -10,7 +10,11 @@ import UIKit
 
 class SecondViewController: UIViewController {
     @IBOutlet weak var income: UITextField!
+    @IBOutlet weak var saveButton1: UIButton!
     
+    @IBOutlet weak var saveButton2: UIButton!
+    @IBOutlet weak var saveButton3: UIButton!
+    @IBOutlet weak var saveButton4: UIButton!
     @IBOutlet weak var label: UILabel!
     
     @IBOutlet weak var exspense: UITextField!
@@ -24,7 +28,10 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        saveButton1.layer.cornerRadius = 10
+        saveButton2.layer.cornerRadius = 10
+        saveButton3.layer.cornerRadius = 10
+        saveButton4.layer.cornerRadius = 10
         let savedData = SavedData()
         let income = savedData.getSavedIncome()
         let expense = savedData.getSavedExpense()
