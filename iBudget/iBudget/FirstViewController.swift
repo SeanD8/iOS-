@@ -63,7 +63,7 @@ class FirstViewController: UIViewController {
         
         let prefs = NSUserDefaults.standardUserDefaults()
         let start = prefs.stringForKey("Date")
-        end = "2018-12-30"
+        end = "2017-02-5"
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -144,11 +144,12 @@ class FirstViewController: UIViewController {
     }
     
     func resetSpendingMoney(){
-        let netIncome = data.getMonthlySavings()
+        let netIncome = (data.getSavedIncome() - data.getSavedExpense()) - data.getMonthlySavings()
         let spendingMoney = netIncome
         let prefs = NSUserDefaults.standardUserDefaults()
         prefs.setDouble(spendingMoney, forKey: "Spending Money")
         prefs.setDouble(spendingMoney, forKey: "Remaining Balance")
+        prefs.setDouble(0.0, forKey: "Total Spent")
         updateProgress()
     }
     @IBAction func addIncome(sender: UIButton) {
