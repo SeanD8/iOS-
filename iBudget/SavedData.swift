@@ -46,4 +46,14 @@ class SavedData {
         let income = prefs.doubleForKey("Remaining Balance")
         return income
     }
+    func getSavedToDate() -> Double{
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let income = prefs.doubleForKey("Saved to Date")
+        return income
+    }
+    func doIUpdate() -> Bool {
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let update = prefs.boolForKey("Update")
+        return update
+    }
 }

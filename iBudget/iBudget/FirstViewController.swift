@@ -23,8 +23,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         incomeButton.layer.cornerRadius = 10
         expenseButton.layer.cornerRadius = 10
-        resetSpendingMoney()
-        
+        updateProgress()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -34,6 +33,20 @@ class FirstViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let incomeChanged = data.doIUpdate()
+        if incomeChanged {
+            let income = prefs.doubleForKey("Income")
+            let expense = prefs.doubleForKey("Expense")
+            let percent = prefs.doubleForKey("Percent")
+            let net = income - expense
+            let spendingMoney = net - (net*percent/100)
+            prefs.setDouble(spendingMoney, forKey: "Spending Money")
+            let totalSpent = prefs.doubleForKey("Total Spent")
+            let remainingBalance = spendingMoney + totalSpent
+            prefs.setDouble(remainingBalance, forKey: "Remaining Balance")
+        }
+        prefs.setBool(false, forKey: "Update")
         updateProgress()
     }
     
@@ -53,6 +66,9 @@ class FirstViewController: UIViewController {
             var money = data.getRemainingBalance()
             money = money + userInput
             prefs.setDouble(money, forKey: "Remaining Balance")
+            var total = prefs.doubleForKey("Total Spent")
+            total = total + userInput
+            prefs.setDouble(total, forKey: "Total Spent")
             updateProgress()
         }else{
             //label.text = "Please Enter a Number"
@@ -66,6 +82,9 @@ class FirstViewController: UIViewController {
             var money = data.getRemainingBalance()
             money = money - userInput
             prefs.setDouble(money, forKey: "Remaining Balance")
+            var total = prefs.doubleForKey("Total Spent")
+            total = total - userInput
+            prefs.setDouble(total, forKey: "Total Spent")
             updateProgress()
         }else{
             //label2.text = "Please Enter a Number"

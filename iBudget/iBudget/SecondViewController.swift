@@ -48,6 +48,7 @@ class SecondViewController: UIViewController {
             label.text = "Current Monthly Income: $\(userInput)"
             let prefs = NSUserDefaults.standardUserDefaults()
             prefs.setDouble(userInput, forKey: "Income")
+            updateBudget()
         }else{
             label.text = "Please Enter a Number"
         }
@@ -60,6 +61,7 @@ class SecondViewController: UIViewController {
             label2.text = "Current Monthly Expense: $\(userInput)"
             let prefs = NSUserDefaults.standardUserDefaults()
             prefs.setDouble(userInput, forKey: "Expense")
+            updateBudget()
         }else{
             label2.text = "Please Enter a Number"
         }
@@ -73,6 +75,7 @@ class SecondViewController: UIViewController {
                 label3.text = "\(userInput)%"
                 let prefs = NSUserDefaults.standardUserDefaults()
                 prefs.setDouble(userInput, forKey: "Percent")
+                updateBudget()
             }else{
                 percentWarningLabel.hidden = false
             }
@@ -80,6 +83,24 @@ class SecondViewController: UIViewController {
             percentWarningLabel.hidden = false
         }
         
+    }
+    func resetData(){
+        let prefs = NSUserDefaults.standardUserDefaults()
+        prefs.setDouble(0.0, forKey: "Income")
+        prefs.setDouble(0.0, forKey: "Expense")
+        prefs.setDouble(0.0, forKey: "Percent")
+        prefs.setDouble(0.0, forKey: "Spending Money")
+        prefs.setDouble(0.0, forKey: "Remaining Balance")
+        prefs.setDouble(0.0, forKey: "Saved to Date")
+        prefs.setDouble(0.0, forKey: "Total Spent")
+        label.text = "Current Monthly Income: $\(0.00)"
+        label2.text = "Current Monthly Income: $\(0.00)"
+        label3.text = "Current Monthly Income: $\(0.00)"
+        label3.text = "\(0)%"
+    }
+    func updateBudget(){
+        let prefs = NSUserDefaults.standardUserDefaults()
+        prefs.setBool(true, forKey: "Update")
     }
 
     @IBAction func save(sender: UIButton) {
@@ -92,6 +113,9 @@ class SecondViewController: UIViewController {
     
     @IBAction func save3(sender: UIButton) {
         getPercent()
+    }
+    @IBAction func clear(sender: UIButton) {
+        resetData()
     }
 }
 
