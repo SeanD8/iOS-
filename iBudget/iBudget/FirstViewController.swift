@@ -59,18 +59,19 @@ class FirstViewController: UIViewController {
         let year =  components1.year
         let month = components1.month
         let day = components1.day
-        let start = "\(year)-\(month)-\(day)"
+        var end = "\(year)-\(month)-\(day)"
         
         let prefs = NSUserDefaults.standardUserDefaults()
-        var end = prefs.stringForKey("Date")
-        //end = "2016-12-30"
+        let start = prefs.stringForKey("Date")
+        end = "2018-12-30"
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        let startDate:NSDate = dateFormatter.dateFromString(start)!
-        if end != nil {
-            let endDate:NSDate = dateFormatter.dateFromString(end!)!
+        if start != nil {
+            let startDate:NSDate = dateFormatter.dateFromString(start!)!
+            let endDate:NSDate = dateFormatter.dateFromString(end)!
+            
             let cal = NSCalendar.currentCalendar()
         
             let unit:NSCalendarUnit = .Day
@@ -85,7 +86,7 @@ class FirstViewController: UIViewController {
             }
             prefs.setDouble(totalTime, forKey: "Time Passed")
         }
-        prefs.setObject(start, forKey: "Date")
+        prefs.setObject(end, forKey: "Date")
         
         
         
