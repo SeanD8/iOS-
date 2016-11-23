@@ -21,9 +21,10 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var percent: UITextField!
     @IBOutlet weak var percentWarningLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      
         let savedData = SavedData()
         let income = savedData.getSavedIncome()
         let expense = savedData.getSavedExpense()
@@ -53,9 +54,7 @@ class SecondViewController: UIViewController {
         }
     }
      func getExpense() {
-        
         let a:Double? = Double(exspense.text!)
-        
         if let userInput = a{
             label2.text = "Current Monthly Expense: $\(userInput)"
             let prefs = NSUserDefaults.standardUserDefaults()
@@ -66,7 +65,7 @@ class SecondViewController: UIViewController {
     }
     func getPercent() {
         let a:Double? = Double(percent.text!)
-        
+     
         if let userInput = a{
             if(userInput > -0.00000000000001 && userInput < 100.00000000000001){
                 percentWarningLabel.hidden = true

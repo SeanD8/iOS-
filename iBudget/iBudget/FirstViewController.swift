@@ -17,6 +17,7 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var expenseField: UITextField!
     @IBOutlet weak var incomeField: UITextField!
     
+    
     let data = SavedData()
     
     override func viewDidLoad() {
