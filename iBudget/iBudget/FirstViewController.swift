@@ -63,7 +63,7 @@ class FirstViewController: UIViewController {
         
         let prefs = NSUserDefaults.standardUserDefaults()
         let start = prefs.stringForKey("Date")
-        end = "2016-12-31"
+        //end = "2016-12-31"
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -105,7 +105,12 @@ class FirstViewController: UIViewController {
     func updateProgress(){
         let spendingMoney = data.getSpendingMoney()
         let remainingBalance = data.getRemainingBalance()
-        let percentLeft = 1 - (Float((spendingMoney - remainingBalance)/spendingMoney))
+        var percentLeft: Float
+        if spendingMoney >= 0 {
+            percentLeft = 1 - (Float((spendingMoney - remainingBalance)/spendingMoney))
+        } else {
+            percentLeft = 0.0
+        }
         progressBar.setProgress(percentLeft, animated: true)
         remainingBudget.text = "$\(String(format:"%.2f",remainingBalance))"
         
@@ -148,7 +153,10 @@ class FirstViewController: UIViewController {
     }
     
     func resetSpendingMoney(){
-        let netIncome = (data.getSavedIncome() - data.getSavedExpense()) - data.getMonthlySavings()
+        var netIncome = (data.getSavedIncome() - data.getSavedExpense()) - data.getMonthlySavings()
+        if netIncome <= 0 {
+            netIncome = data.getSavedIncome() - data.getSavedExpense()
+        }
         let spendingMoney = netIncome
         let prefs = NSUserDefaults.standardUserDefaults()
         prefs.setDouble(spendingMoney, forKey: "Spending Money")
