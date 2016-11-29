@@ -29,11 +29,11 @@ class ThirdViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    //call on load and if values updated
     override func viewWillAppear(animated: Bool) {
         loadData()
     }
-    
+    //add all data to labels
     func loadData(){
         incomeLabel.text = "$\(String(format:"%.2f",data.getSavedIncome()))"
         expensesLabel.text = "$\(String(format:"%.2f",data.getSavedExpense()))"

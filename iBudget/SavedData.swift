@@ -7,6 +7,7 @@
 //
 
 import Foundation
+//class used to get all stored values
 class SavedData {
     
     func getSavedIncome() -> Double{

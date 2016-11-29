@@ -17,8 +17,11 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var expenseField: UITextField!
     @IBOutlet weak var incomeField: UITextField!
     
+    @IBOutlet weak var incomeWarningLabel: UILabel!
     
+    @IBOutlet weak var expenseWarningLabel: UILabel!
     let data = SavedData()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,8 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //used to refresh page on other elements change
     override func viewWillAppear(animated: Bool) {
         let prefs = NSUserDefaults.standardUserDefaults()
         let incomeChanged = data.doIUpdate()
@@ -50,7 +55,7 @@ class FirstViewController: UIViewController {
         prefs.setBool(false, forKey: "Update")
         updateProgress()
     }
-    
+    //checks the date to see if a month has passed
     func checkDate() {
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
@@ -92,6 +97,7 @@ class FirstViewController: UIViewController {
         
     }
     
+    //update savings in defaults on change
     func updateSavings(){
         let prefs = NSUserDefaults.standardUserDefaults()
         let remainingBalance = prefs.doubleForKey("Remaining Balance")
@@ -101,7 +107,7 @@ class FirstViewController: UIViewController {
         prefs.setDouble(totalSaved, forKey: "Saved to Date")
         resetSpendingMoney()
     }
-    
+    //update progress bar depending on stored info
     func updateProgress(){
         let spendingMoney = data.getSpendingMoney()
         let remainingBalance = data.getRemainingBalance()
@@ -115,10 +121,11 @@ class FirstViewController: UIViewController {
         remainingBudget.text = "$\(String(format:"%.2f",remainingBalance))"
         
     }
-    
+    //get the income that was saved in defaults
     func getIncome () {
         let a:Double? = Double(incomeField.text!)
         if let userInput = a{
+            incomeWarningLabel.hidden = true
             let prefs = NSUserDefaults.standardUserDefaults()
             var money = data.getRemainingBalance()
             money = money + userInput
@@ -130,13 +137,14 @@ class FirstViewController: UIViewController {
             incomeField.text = ""
         }else{
             incomeField.text = ""
-            //label.text = "Please Enter a Number"
+            incomeWarningLabel.hidden = false
         }
     }
-    
+    //get expense saved on defaults
     func getExpense() {
         let a:Double? = Double(expenseField.text!)
         if let userInput = a{
+            expenseWarningLabel.hidden = true
             let prefs = NSUserDefaults.standardUserDefaults()
             var money = data.getRemainingBalance()
             money = money - userInput
@@ -148,10 +156,10 @@ class FirstViewController: UIViewController {
             expenseField.text = ""
         }else{
             expenseField.text = ""
-            //label2.text = "Please Enter a Number"
+            expenseWarningLabel.hidden = false
         }
     }
-    
+    //reset spending money and progress bar
     func resetSpendingMoney(){
         var netIncome = (data.getSavedIncome() - data.getSavedExpense()) - data.getMonthlySavings()
         if netIncome <= 0 {
@@ -164,10 +172,11 @@ class FirstViewController: UIViewController {
         prefs.setDouble(0.0, forKey: "Total Spent")
         updateProgress()
     }
+    //get income
     @IBAction func addIncome(sender: UIButton) {
         getIncome()
     }
-    
+    //get expense
     @IBAction func addExpense(sender: UIButton) {
         getExpense()
     }

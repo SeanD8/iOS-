@@ -27,7 +27,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var incomeWarningLabel: UILabel!
     @IBOutlet weak var expenseWarningLabel: UILabel!
     
-    
+    //set default values and labels
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton1.layer.cornerRadius = 10
@@ -51,7 +51,7 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
    
-    
+    //get user inputted income and store if valid
      func getIncome () {
         let a:Double? = Double(income.text!)
         if let userInput = a{
@@ -66,6 +66,7 @@ class SecondViewController: UIViewController {
             income.text = ""
         }
     }
+    //get the user inputted expense and store if valid
      func getExpense() {
         let a:Double? = Double(exspense.text!)
         if let userInput = a{
@@ -80,6 +81,7 @@ class SecondViewController: UIViewController {
             exspense.text = ""
         }
     }
+    //get user inputted percent and store if valid
     func getPercent() {
         let a:Double? = Double(percent.text!)
      
@@ -101,6 +103,7 @@ class SecondViewController: UIViewController {
         }
         
     }
+    //delete all stored values and reset to 0
     func resetData(){
         let prefs = NSUserDefaults.standardUserDefaults()
         prefs.setDouble(0.0, forKey: "Income")
@@ -117,6 +120,7 @@ class SecondViewController: UIViewController {
         label3.text = "Current Monthly Income: $\(0.00)"
         label3.text = "\(0)%"
     }
+    //boolean to see if budget was updated
     func updateBudget(){
         let prefs = NSUserDefaults.standardUserDefaults()
         prefs.setBool(true, forKey: "Update")
