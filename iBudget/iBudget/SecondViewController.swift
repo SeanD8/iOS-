@@ -24,6 +24,8 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var label3: UILabel!
     @IBOutlet weak var percent: UITextField!
     @IBOutlet weak var percentWarningLabel: UILabel!
+    @IBOutlet weak var incomeWarningLabel: UILabel!
+    @IBOutlet weak var expenseWarningLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -37,9 +39,9 @@ class SecondViewController: UIViewController {
         let expense = savedData.getSavedExpense()
         let percent = savedData.getPercentSaved()
         
-        label.text = "Current Monthly Income: $\(income)"
-        label2.text = "Current Monthly Expenses: $\(expense)"
-        label3.text = "%\(percent)"
+        label.text = "Current Monthly Income: $\(String(format:"%.2f",income))"
+        label2.text = "Current Monthly Expenses: $\(String(format:"%.2f",expense))"
+        label3.text = "%\(String(format:"%.0f",percent))"
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -53,23 +55,29 @@ class SecondViewController: UIViewController {
      func getIncome () {
         let a:Double? = Double(income.text!)
         if let userInput = a{
-            label.text = "Current Monthly Income: $\(userInput)"
+            incomeWarningLabel.hidden = true
+            label.text = "Current Monthly Income: $\(String(format:"%.2f",userInput))"
             let prefs = NSUserDefaults.standardUserDefaults()
             prefs.setDouble(userInput, forKey: "Income")
             updateBudget()
+            income.text = ""
         }else{
-            label.text = "Please Enter a Number"
+            incomeWarningLabel.hidden = false
+            income.text = ""
         }
     }
      func getExpense() {
         let a:Double? = Double(exspense.text!)
         if let userInput = a{
-            label2.text = "Current Monthly Expense: $\(userInput)"
+            expenseWarningLabel.hidden = true
+            label2.text = "Current Monthly Expense: $\(String(format:"%.2f",userInput))"
             let prefs = NSUserDefaults.standardUserDefaults()
             prefs.setDouble(userInput, forKey: "Expense")
             updateBudget()
+            exspense.text = ""
         }else{
-            label2.text = "Please Enter a Number"
+            expenseWarningLabel.hidden = false
+            exspense.text = ""
         }
     }
     func getPercent() {
@@ -78,15 +86,18 @@ class SecondViewController: UIViewController {
         if let userInput = a{
             if(userInput > -0.00000000000001 && userInput < 100.00000000000001){
                 percentWarningLabel.hidden = true
-                label3.text = "\(userInput)%"
+                label3.text = "\(String(format:"%.0f",userInput))%"
                 let prefs = NSUserDefaults.standardUserDefaults()
                 prefs.setDouble(userInput, forKey: "Percent")
                 updateBudget()
+                percent.text = ""
             }else{
                 percentWarningLabel.hidden = false
+                percent.text = ""
             }
         }else{
             percentWarningLabel.hidden = false
+            percent.text = ""
         }
         
     }

@@ -35,11 +35,11 @@ class ThirdViewController: UIViewController {
     }
     
     func loadData(){
-        incomeLabel.text = "$\(data.getSavedIncome())"
-        expensesLabel.text = "$\(data.getSavedExpense())"
-        netIncomeLabel.text = "$\(data.getMonthlySavings())"
-        yearlyLabel.text = "$\(data.getYearlySaved())"
-        savingsToDate.text = "$\(data.getSavedToDate())"
+        incomeLabel.text = "$\(String(format:"%.2f",data.getSavedIncome()))"
+        expensesLabel.text = "$\(String(format:"%.2f",data.getSavedExpense()))"
+        netIncomeLabel.text = "$\(String(format:"%.2f",data.getMonthlySavings()))"
+        yearlyLabel.text = "$\(String(format:"%.2f",data.getYearlySaved()))"
+        savingsToDate.text = "$\(String(format:"%.2f",data.getSavedToDate()))"
     }
 }
 

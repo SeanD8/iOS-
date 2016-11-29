@@ -63,7 +63,7 @@ class FirstViewController: UIViewController {
         
         let prefs = NSUserDefaults.standardUserDefaults()
         let start = prefs.stringForKey("Date")
-        end = "2017-02-5"
+        //end = "2017-02-5"
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -107,7 +107,7 @@ class FirstViewController: UIViewController {
         let remainingBalance = data.getRemainingBalance()
         let percentLeft = 1 - (Float((spendingMoney - remainingBalance)/spendingMoney))
         progressBar.setProgress(percentLeft, animated: true)
-        remainingBudget.text = "$\(remainingBalance)"
+        remainingBudget.text = "$\(String(format:"%.2f",remainingBalance))"
         
     }
     
@@ -122,7 +122,9 @@ class FirstViewController: UIViewController {
             total = total + userInput
             prefs.setDouble(total, forKey: "Total Spent")
             updateProgress()
+            incomeField.text = ""
         }else{
+            incomeField.text = ""
             //label.text = "Please Enter a Number"
         }
     }
@@ -138,7 +140,9 @@ class FirstViewController: UIViewController {
             total = total - userInput
             prefs.setDouble(total, forKey: "Total Spent")
             updateProgress()
+            expenseField.text = ""
         }else{
+            expenseField.text = ""
             //label2.text = "Please Enter a Number"
         }
     }
