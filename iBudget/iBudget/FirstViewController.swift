@@ -63,7 +63,7 @@ class FirstViewController: UIViewController {
         
         let prefs = NSUserDefaults.standardUserDefaults()
         let start = prefs.stringForKey("Date")
-        //end = "2017-02-5"
+        end = "2016-12-31"
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
